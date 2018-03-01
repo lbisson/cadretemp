@@ -15,18 +15,21 @@
   },
   "engineStrict": true,
   "dependencies": {
+    "check-dependencies": "1.1.0",
+    "colors": "1.1.2",
     "roosevelt":"~0.11.4",
-    "teddy":"~0.4.0",
     "roosevelt-less":"~0.4.0",
-    "roosevelt-uglify":"~0.2.0"
+    "roosevelt-uglify":"~0.2.0",
+    "teddy":"~0.4.0"
   },
   "devDependencies": {
+    "husky": "~0.14.3",
+    "lint-staged": "~6.0.0",
+    "nodemon": "~1.14.7",
+    "reload": "2.2.2",
     "standard": "~10.0.3",
     "stylelint": "~8.4.0",
-    "stylelint-config-standard": "~18.0.0",
-    "nodemon": "~1.14.7",
-    "lint-staged": "~6.0.0",
-    "husky": "~0.14.3"
+    "stylelint-config-standard": "~18.0.0"
   },
   "rooseveltConfig": {
     "port": 43712,
@@ -39,7 +42,7 @@
     },
     "noMinify": false,
     "htmlValidator": {
-      "enable": false,
+      "enable": true,
       "port": 8888,
       "exceptions": {
         "requestHeader": "Partial",
