@@ -2,15 +2,36 @@
 
 @face: sans-serif;
 
+html,
 body {
   font-family: @face;
-  color: #100;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: #eee;
+}
+
+main {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+main > header {
+  padding: 0 24px;
+}
+
+main > article {
+  flex-grow: 1;
+  background-color: #e5e5e5;
 }
 
 .logo {
   background: no-repeat url(/images/cadre-logo.svg);
   display: inline-block;
-  text-indent: -100%;
+  text-indent: -300%;
   transform: rotate(-7deg);
   width: 70px;
 }
