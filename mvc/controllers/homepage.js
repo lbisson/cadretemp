@@ -1,10 +1,18 @@
+/**
+ * Module attaches homepage route handlers
+ * @module controllers/homepage
+ * @param {Object} app - Express app object
+ */
 module.exports = function (app) {
+  /**
+   * GET Renders hompage
+   * @event GET /
+   * @param {Object} req - Express req object
+   * @param {Object} res - Express res object
+   */
   app.route('/').get((req, res) => {
     let model = require('models/global')(req, res)
     model.content.pageTitle = '{content.appTitle} - Homepage'
-    model.content.hello = 'Hi! I\'m a variable trickling down through the MVC structure!'
-    model.content.picLabel = 'Here\'s a silly picture of Teddy Roosevelt:'
-    model.teddyPath = '/images/teddy.jpg'
     res.render('homepage', model)
   })
 }
