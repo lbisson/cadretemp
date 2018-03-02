@@ -1,8 +1,18 @@
 <include src='layouts/main'>
   <arg pageContent>
     <article>
-
-
+        <form action='' method='post'>
+          <fieldset id='projecttitle'>
+            <legend>Pipeline Project Name</legend>
+            <dl>
+              <dt hidden><label for='projecttitle'>My project title</label></dt>
+              <dd><input name='projecttitle' type='text' id='projecttitle' placeholder='My project title...'></dd>
+            </dl>
+          </fieldset>
+          <div hidden>
+            <input type='submit' value='Title' name='title' id='submit'>
+          </div>
+        </form>
     </article>
   </arg>
 </include>
