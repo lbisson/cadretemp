@@ -10,7 +10,6 @@ body {
   padding: 0;
   margin: 0;
   border: 0;
-  background-color: #eee;
 }
 
 main {
@@ -27,32 +26,31 @@ main {
     height: 100%;
     justify-content: space-between;
     align-items: center;
+    background-color: @global-sidebar-background;
   }
 }
 
 main {
   > article {
     flex-grow: 1;
-    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: @global-content-background;
   }
-}
-
-.logo {
-  background: no-repeat url(/images/cadre-logo.svg);
-  display: inline-block;
-  text-indent: -300%;
-  transform: rotate(-7deg);
-  width: 70px;
-}
-
-.nav-icon {
-  width: 42px;
-  padding: 20px 0;
 }
 
 // global vars and mixins
 @import "fonts.less";
 @import "colors.less";
 
-//components
+// global components
+@import "components/descriptionlists.less";
+@import "components/fieldsets.less";
+@import "components/icons.less";
 @import "components/listitems.less";
+
+// views
+@import "homepage.less";
