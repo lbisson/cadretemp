@@ -1,6 +1,6 @@
 // Global styles
 
-@face: sans-serif;
+@face: @default-font;
 
 html,
 body {
@@ -19,18 +19,22 @@ main {
   height: 100%;
 }
 
-main > header {
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
+main {
+  > header {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-main > article {
-  flex-grow: 1;
-  background-color: #e5e5e5;
+main {
+  > article {
+    flex-grow: 1;
+    background-color: #e5e5e5;
+  }
 }
 
 .logo {
@@ -46,4 +50,9 @@ main > article {
   padding: 20px 0;
 }
 
-@import "more.less";
+// global vars and mixins
+@import "fonts.less";
+@import "colors.less";
+
+//components
+@import "components/listitems.less";

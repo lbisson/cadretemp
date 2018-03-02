@@ -111,7 +111,12 @@
     },
     "publicFolder": "public",
     "favicon": "images/favicon.ico",
-    "staticsSymlinksToPublic": ["images","css: .build/css","js: .build/js"],
+    "staticsSymlinksToPublic": [
+      "images",
+      "fonts",
+      "css: .build/css",
+      "js: .build/js"
+    ],
     "versionedPublic": false,
     "alwaysHostPublic": false
   },
