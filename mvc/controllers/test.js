@@ -12,7 +12,7 @@ module.exports = function (app) {
      */
     app.route('/test').get((req, res) => {
       let model = require('models/global')(req, res)
-      model.content.pageTitle = '{content.appTitle} - Info'
+      model.content.pageTitle = '{content.appTitle} - Test'
       res.render('test', model)
     })
   }
