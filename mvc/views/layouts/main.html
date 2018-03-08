@@ -16,6 +16,13 @@
         </h1>
         <nav>
           <ul>
+            <loop through='nav' val='route'>
+              <li>
+                <a href='{route}'>
+                  {route}
+                </a>
+              </li>
+            </loop>
             <li>
               <a class='icon nav-icon info' href='/info'>info</a>
             </li>
