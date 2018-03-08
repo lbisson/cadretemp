@@ -16,16 +16,28 @@ let model = {
 
 // extend global model to provide additional useful vars at runtime and export it
 module.exports = function (req, res) {
-  var scripts = ['/js/main.js'];
+  var scripts = ['/js/main.js'],
+      globalProject = res.app.locals.project,
+      globalNav,
+      globalProjectName;
 
   if (process.env.NODE_ENV === 'development') {
     scripts.push('/reload/reload.js')
+  }
+
+  if (globalProject) {
+    globalNav = globalProject.nav;
+    globalProjectName = globalProject.name;
+    model.content.projectName = globalProject.name;
   }
 
   return {
 
     // always static
     content: model.content,
+    project: globalProject,
+    projectName: globalProjectName,
+    nav: globalNav,
 
     // recalculated each require
     currentYear: new Date().getFullYear(),
