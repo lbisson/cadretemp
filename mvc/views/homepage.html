@@ -1,18 +1,51 @@
 <include src='layouts/main'>
   <arg pageContent>
-    <article>
-        <form method='post'>
-          <fieldset id='projecttitle'>
-            <legend>Pipeline Project Name</legend>
-            <dl>
-              <dt hidden><label for='title'>My project title</label></dt>
-              <dd><input name='projecttitle' type='text' id='title' placeholder='My project title...'></dd>
-            </dl>
+    <unless tempProjectName>
+      <article>
+          <form action='/' method='post'>
+            <fieldset id='projecttitle'>
+              <legend>Pipeline Project Name</legend>
+              <dl>
+                <dt hidden><label for='title'>My project title</label></dt>
+                <dd><input name='projectTitle' type='text' id='title' placeholder='My project title...'></dd>
+              </dl>
+            </fieldset>
+            <div hidden>
+              <input type='submit' value='Title' name='title' id='submit'>
+            </div>
+          </form>
+      </article>
+    </unless>
+    <else>
+      <article>
+        <h1>{tempProjectName}</h1>
+        <form action='/' method='post'>
+          <fieldset id='options'>
+            <legend>Pipeline Stages</legend>
+            <div>
+                <label>
+                    <input name='projectTitle' type='text' id='title' placeholder='My project title...' value='{tempProjectName}'>
+                    My project title
+                </label>
+              <label>
+                  <input id='build' type='checkbox' name='build' value='build'>
+                  Build
+              </label>
+              <label>
+                  <input id='test' type='checkbox' name='test' value='test'>
+                  Test
+              </label>
+              <label>
+                  <input id='deploy' type='checkbox' name='deploy' value='deploy'>
+                  Deploy
+              </label>
+            </div>
           </fieldset>
-          <div hidden>
-            <input type='submit' value='Title' name='title' id='submit'>
+          <div>
+            <input type='submit' value="Let's Go!" id='submit'>
           </div>
         </form>
-    </article>
+      </article>
+    </else>
   </arg>
 </include>
