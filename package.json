@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "repository": {
-    "private-repo": "git+ssh://somewhere:port/folder/on/server"
+    "private-repo": "git+ssh://gitlab.ques.tech/CADRE/CADRE"
   },
   "main": "app.js",
   "readmeFilename": "",
@@ -16,20 +16,20 @@
   "engineStrict": true,
   "dependencies": {
     "check-dependencies": "1.1.0",
-    "colors": "1.1.2",
-    "roosevelt":"~0.11.4",
-    "roosevelt-less":"~0.4.0",
-    "roosevelt-uglify":"~0.2.0",
-    "teddy":"~0.4.0"
+    "colors": "1.2.1",
+    "roosevelt": "0.11.9",
+    "roosevelt-less": "0.5.0",
+    "roosevelt-uglify": "0.2.2",
+    "teddy": "0.4.23"
   },
   "devDependencies": {
-    "husky": "~0.14.3",
-    "lint-staged": "~6.0.0",
-    "nodemon": "~1.14.7",
+    "husky": "0.14.3",
+    "lint-staged": "7.0.0",
+    "nodemon": "1.17.1",
     "reload": "2.2.2",
-    "standard": "~10.0.3",
-    "stylelint": "~8.4.0",
-    "stylelint-config-standard": "~18.0.0"
+    "standard": "11.0.0",
+    "stylelint": "9.1.1",
+    "stylelint-config-standard": "18.2.0"
   },
   "rooseveltConfig": {
     "port": 43712,
@@ -77,7 +77,9 @@
     },
     "modelsPath": "mvc/models",
     "viewsPath": "mvc/views",
-    "viewEngine": ["html: teddy"],
+    "viewEngine": [
+      "html: teddy"
+    ],
     "controllersPath": "mvc/controllers",
     "error404": "404.js",
     "error5xx": "5xx.js",
@@ -92,14 +94,27 @@
     },
     "css": {
       "sourceDir": "css",
-      "compiler": {"nodeModule":"roosevelt-less","params":{"cleanCSS":{"advanced":true,"aggressiveMerging":true},"sourceMap":null}},
+      "compiler": {
+        "nodeModule": "roosevelt-less",
+        "params": {
+          "cleanCSS": {
+            "advanced": true,
+            "aggressiveMerging": true
+          },
+          "sourceMap": null
+        }
+      },
       "whitelist": null,
       "output": ".build/css",
       "versionFile": null
     },
     "js": {
       "sourceDir": "js",
-      "compiler": {"nodeModule":"roosevelt-uglify","showWarnings":false,"params":{}},
+      "compiler": {
+        "nodeModule": "roosevelt-uglify",
+        "showWarnings": false,
+        "params": {}
+      },
       "whitelist": null,
       "blacklist": null,
       "output": ".build/js",
@@ -130,20 +145,20 @@
     "ext": "less html js json"
   },
   "scripts": {
-    "start": "npm run production",
+    "start": "nodemon app.js --production-mode",
     "production": "nodemon app.js --production-mode",
-    "prod": "npm run production",
-    "p": "npm run production",
+    "prod": "nodemon app.js --production-mode",
+    "p": "nodemon app.js --production-mode",
     "development": "nodemon app.js --development-mode",
-    "dev": "npm run development",
-    "d": "npm run development",
+    "dev": "nodemon app.js --development-mode",
+    "d": "nodemon app.js --development-mode",
     "kill-validator": "node ./node_modules/roosevelt/lib/scripts/killValidator.js",
-    "kv": "npm run kill-validator",
+    "kv": "node ./node_modules/roosevelt/lib/scripts/killValidator.js",
     "clean": "node ./node_modules/roosevelt/lib/scripts/appCleanup.js",
     "audit": "node ./node_modules/roosevelt/lib/scripts/configAuditor.js",
     "standard": "standard",
     "stylelint": "./node_modules/.bin/stylelint \"statics/css/**/*.less\" --syntax less",
-    "lint": "npm run standard && npm run stylelint",
+    "lint": "standard && ./node_modules/.bin/stylelint \"statics/css/**/*.less\" --syntax less",
     "test": "npm run lint",
     "precommit": "lint-staged",
     "pc": "npm run precommit"
