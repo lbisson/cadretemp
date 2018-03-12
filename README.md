@@ -19,10 +19,6 @@ Some important caveats to note:
 
 The [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) is also required for development work. The JDK is required for the local HTML validator feature.
 
-You will also need to install [PostgreSQL](http://www.postgresql.org/download). *(macOS users are recommended to get it [here](https://postgresapp.com).)*
-
-To be able to run the automated testing, you'll also need to download the most recent Selenium web drivers for Firefox and Chrome from the [selenium-webdriver npm page](https://www.npmjs.com/package/selenium-webdriver) and add them to your PATH. Ubuntu users may need to `sudo apt install libgconf-2-4` in order for the Chromium driver to work correctly.
-
 Next ensure that git is installed and that it's [properly configured](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup).
 
 # Recommended dev tools
