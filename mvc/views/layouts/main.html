@@ -18,7 +18,8 @@
           <ul>
             <loop through='nav' val='route'>
               <li>
-                <a href='{route}'>
+                <a if-path='{route}' true='class="active"' href='{route}'>
+                  <img src='/images/{route}.svg' alt=''>
                   {route}
                 </a>
               </li>

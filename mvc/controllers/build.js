@@ -13,6 +13,7 @@ module.exports = function (app) {
     app.route('/build').get((req, res) => {
       let model = require('models/global')(req, res)
       model.content.pageTitle = '{content.appTitle} - Build'
+      model.path = "build"
       res.render('build', model)
     })
   }
