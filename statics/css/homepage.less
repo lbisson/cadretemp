@@ -1,46 +1,74 @@
-#projecttitle {
+#name {
   legend {
     padding: .5em 0;
     color: #666;
   }
-  dl {
-    dd {
-      padding: 1em 1.5em 1.5em 1.5em;
-      input {
-        font-size: 5em;
-      }
-      input::placeholder {
-        color: #dadada;
-        font-weight: 200;
-        font-style: italic;
-      }
-      input:focus {
-        outline: none;
-      }
-    }
+  label {
+    display: block;
+    height: 0;
+    text-indent: -999%;
+  }
+  input {
+    padding: .2em .25em .25em;
+    font-size: 5em;
+  }
+  input::placeholder {
+    color: #dadada;
+    font-weight: 200;
+    font-style: italic;
+  }
+  input:focus {
+    outline: none;
   }
 }
 
 #options {
+  padding: 0 0 1em 0;
   legend {
     padding: .5em 0;
     color: #666;
   }
-  dl {
+  ul {
+    background-color: white;
     display: flex;
-    font-size: 4em;
-    background-color: #fff;
-    padding: .25em .5em 0 .5em;
+    font-size: 2em;
+    font-weight: 700;
+    padding: .2em .25em .25em;
     text-transform: uppercase;
-    font-weight: 800;
-    dd {
-      padding: 1em 1.5em 1.5em 1.5em;
-      input {
-        font-size: 5em;
+    li:not(:first-child) {
+      display: flex;
+      align-items: center;
+      padding: 0 .5em;
+      label {
+        order: 2;
       }
-      input:focus {
-        outline: none;
+      input {
+        order: 1;
       }
     }
+    li:nth-child(3) {
+      border-width: 0 1px;
+      border-style: solid;
+    }
   }
+  input {
+    margin: .25em .25em 0 0;
+  }
+  @supports (zoom:3) {
+    input[type=checkbox]{
+    zoom: 3;
+    }
+  }
+  @supports not (zoom:3) {
+    input[type=checkbox]{
+      transform: scale(3);
+      margin: 15px;
+    }
+  }
+}
+
+#options + button {
+  height: 40px;
+  border-radius: 6px;
+  font-size: 1em;
 }
