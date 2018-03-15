@@ -18,10 +18,18 @@
           <ul>
             <loop through='nav' val='route'>
               <li>
-                <a if-path='{route}' true='class="active"' href='{route}'>
-                  <img src='/images/{route}.svg' alt=''>
-                  {route}
-                </a>
+                <if path='{route}'>
+                  <a class='active' href='{route}'>
+                    <img src='/images/{route}.svg' alt=''>
+                    {route}
+                  </a>
+                </if>
+                <else>
+                  <a href='{route}'>
+                    <img src='/images/{route}.svg' alt=''>
+                    {route}
+                  </a>
+                </else>
               </li>
             </loop>
             <li>
