@@ -16,7 +16,7 @@ let model = {
 
 // extend global model to provide additional useful vars at runtime and export it
 module.exports = function (req, res) {
-  var scripts = ['/js/main.js'],
+  var scripts = ['/js/cadreClient-min.js'],
       globalProject = res.app.locals.project,
       globalNav,
       globalProjectName;

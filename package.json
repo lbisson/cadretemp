@@ -115,13 +115,43 @@
         "showWarnings": false,
         "params": {}
       },
-      "whitelist": null,
+      "whitelist": [
+        ".bundled/cadreClient.js:cadreClient-min.js"
+      ],
       "blacklist": null,
       "output": ".build/js",
       "bundler": {
-        "bundles": [],
+        "bundles": [
+          {
+            "outputFile": "cadreClient.js",
+            "env": "prod",
+            "files": [
+              "main.js"
+            ],
+            "params": {
+              "paths": [
+                "statics/js",
+                "statics/.build"
+              ]
+            }
+          },
+          {
+            "outputFile": "cadreClient.js",
+            "env": "dev",
+            "files": [
+              "main.js"
+            ],
+            "params": {
+              "paths": [
+                "statics/js",
+                "statics/.build"
+              ],
+              "debug": true
+            }
+          }
+        ],
         "output": ".bundled",
-        "expose": true
+        "expose": false
       }
     },
     "publicFolder": "public",
