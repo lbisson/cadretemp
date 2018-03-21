@@ -18,4 +18,10 @@ npm-debug.log
 node_modules
 
 .build
+.bundled
 public
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+*.code-workspace
