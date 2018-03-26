@@ -20,6 +20,22 @@ form {
     input[type="radio"]:focus {
         box-shadow: 0 0 0 1px #dedede, 0 0 0px 3px #39BFD8;
     }
+    label[for='vc-git'] {
+        background-image: linear-gradient(to right, #999 1.15em, #dedede 1.15em);
+        -webkit-mask: url(../images/git.svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-image: url(../images/git.svg);
+        mask-repeat: no-repeat;
+        padding: 0 0 0 1.5em;
+    }
+    label[for='vc-github'] {
+        background-image: linear-gradient(to right, #999 1.15em, #dedede 1.15em);
+        -webkit-mask: url(../images/github.svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-image: url(../images/github.svg);
+        mask-repeat: no-repeat;
+        padding: 0 0 0 1.5em;
+    }
     #submit {
         align-self: center;
     }
@@ -36,6 +52,8 @@ form {
         border-style: solid;
         border-color: #dedede;
         border-radius: 10px;
+    }
+    &.semanticForms fieldset:focus-within {
         box-shadow: 0px 0px 0px 5px #39BFD8;
     }
     &.semanticForms dl dd {
