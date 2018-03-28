@@ -1,3 +1,6 @@
+@import 'fonts';
+@import 'colors';
+
 form {
     display: flex;
     flex-direction: column;
@@ -12,7 +15,6 @@ form {
         transition: 0.2s all ease-in-out;
         outline: none;
         position: relative;
-        top: 4px;
     }
     input[type="radio"]:checked {
         border: 6px solid #39BFD8;
@@ -20,27 +22,12 @@ form {
     input[type="radio"]:focus {
         box-shadow: 0 0 0 1px #dedede, 0 0 0px 3px #39BFD8;
     }
-    label[for='vc-git'] {
-        background-image: linear-gradient(to right, #999 1.15em, #dedede 1.15em);
-        -webkit-mask: url(../images/git.svg);
-        -webkit-mask-repeat: no-repeat;
-        mask-image: url(../images/git.svg);
-        mask-repeat: no-repeat;
-        padding: 0 0 0 1.5em;
-    }
-    label[for='vc-github'] {
-        background-image: linear-gradient(to right, #999 1.15em, #dedede 1.15em);
-        -webkit-mask: url(../images/github.svg);
-        -webkit-mask-repeat: no-repeat;
-        mask-image: url(../images/github.svg);
-        mask-repeat: no-repeat;
-        padding: 0 0 0 1.5em;
-    }
     #submit {
         align-self: center;
     }
     &.semanticForms {
         flex-direction: row;
+        font-family: @default-font;
     }
     &.semanticForms .floatLabelForm dd {
         float: none;
@@ -58,5 +45,86 @@ form {
     }
     &.semanticForms dl dd {
         background-color: #dedede;
+    }
+    &.semanticForms .checkboxes li {
+        display: flex;
+        label {
+            display: flex;
+            padding: 0 0 0 .75em;
+            &:before {
+                content: " ";
+                height: 16px;
+                left: -6px;
+                position: relative;
+                width: 16px;
+                background-color: #999;
+                transition: 0.2s all ease-in-out;
+            }
+            &[for='vc-git']:before {
+                -webkit-mask: url(../images/git.svg);
+                mask: url(../images/git.svg);
+            }
+            &[for='vc-github']:before {
+                -webkit-mask: url(../images/github.svg);
+                mask: url(../images/github.svg);
+            }
+            &[for='bt-ant']:before {
+                -webkit-mask: url(../images/ant.svg);
+                mask: url(../images/ant.svg);
+            }
+            &[for='bt-docker']:before {
+                -webkit-mask: url(../images/docker.svg);
+                mask: url(../images/docker.svg);
+            }
+            &[for='bt-npm']:before {
+                -webkit-mask: url(../images/npm.svg);
+                mask: url(../images/npm.svg);
+            }
+            &[for='bt-maven']:before {
+                -webkit-mask: url(../images/maven.svg);
+                mask: url(../images/maven.svg);
+            }
+            &[for='bt-sonarqube']:before {
+                -webkit-mask: url(../images/sonarqube.svg);
+                mask: url(../images/sonarqube.svg);
+            }
+            &[for='docker-single']:before {
+                -webkit-mask: url(../images/d-single.svg);
+                mask: url(../images/d-single.svg);
+            }
+            &[for='docker-multiple']:before {
+                -webkit-mask: url(../images/d-multiple.svg);
+                mask: url(../images/d-multiple.svg);
+            }
+        }
+        :checked + label {
+            &[for='vc-git']:before {
+                background-color: @git;
+            }
+            &[for='vc-github']:before {
+                background-color: @github;
+            }
+            &[for='bt-ant']:before {
+                background-color: @ant;
+            }
+            &[for='bt-docker']:before {
+                background-color: @docker;
+            }
+            &[for='bt-npm']:before {
+                background-color: @npm;
+            }
+            &[for='bt-maven']:before {
+                background-color: @maven;
+            }
+            &[for='bt-sonarqube']:before {
+                background-color: @sonarqube;
+            }
+            &[for='docker-single']:before {
+                background-color: @docker;
+            }
+            &[for='docker-multiple']:before {
+                background-color: @docker;
+            }
+        }
     }
 }
