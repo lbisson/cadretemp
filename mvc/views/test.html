@@ -5,9 +5,9 @@
               <h1 class="config-title">Test Configuration</h1>
               <form action='/somewhere' method='post' class='semanticForms' data-clearfield-horizontal-offset='21' data-clearfield-vertical-offset='5'>
                 <fieldset>
-                  <legend>Test Tool</legend>
+                  <legend class="test">Test</legend>
                   <dl>
-                    <dt><label data-for='test-tool'>Test Tool</label></dt>
+                    <dt><label data-for='test-tool'>Tool</label></dt>
                     <dd class='test-tool checkboxes'>
                       <ul id='test-tool'>
                         <li><input type='radio' name='test-tool' value='mocha' id='tt-mocha' checked> <label for='tt-mocha'>Mocha</label></li>
@@ -16,11 +16,6 @@
                         <li><input type='radio' name='test-tool' value='robot-framework' id='tt-robot-framework'> <label for='tt-robot-framework'>Robot Framework</label></li>
                       </ul>
                     </dd>
-                  </dl>
-                </fieldset>
-                <fieldset>
-                  <legend>Test Type</legend>
-                  <dl>
                     <dt><label data-for='test-type'>Test Type</label></dt>
                     <dd class='test-type checkboxes'>
                       <ul id='test-type'>
@@ -29,7 +24,7 @@
                       </ul>
                     </dd>
                     <dt><label for='command'>Command</label></dt>
-                      <dd><input id='command' name='command' type='text' placeholder='npm run tests'></dd>
+                    <dd><input id='command' name='command' type='text' placeholder='npm run tests'></dd>
                   </dl>
                 </fieldset>
               </form>
