@@ -1,10 +1,20 @@
 <include src='layouts/main'>
     <arg pageContent>
       <article>
-        <header>
-          <h1>{content.projectName}</h1>
-          <p>This is the deploy page</p>
-        </header>
+          <section>
+              <h1 class="config-title">Deploy Configuration</h1>
+              <form action='/somewhere' method='post' class='semanticForms' data-clearfield-horizontal-offset='21' data-clearfield-vertical-offset='5'>
+                <fieldset>
+                  <legend>Deployment</legend>
+                  <dl>
+                    <dt><label for='url'>URL</label></dt>
+                    <dd><input id='url' name='url' type='text' placeholder='https://mydeployment.com'></dd>
+                    <dt><label for='command'>Command</label></dt>
+                    <dd><input id='command' name='command' type='text' placeholder='deploy now'></dd>
+                  </dl>
+                </fieldset>
+              </form>
+            </section>
       </article>
     </arg>
   </include>

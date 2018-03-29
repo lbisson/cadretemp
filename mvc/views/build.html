@@ -1,10 +1,53 @@
 <include src='layouts/main'>
   <arg pageContent>
     <article>
-      <header>
-        <h1>{content.projectName}</h1>
-        <p>This is the build page</p>
-      </header>
+      <section>
+        <h1 class="config-title">Build Configuration</h1>
+        <form action='/somewhere' method='post' class='semanticForms' data-clearfield-horizontal-offset='21' data-clearfield-vertical-offset='5'>
+          <fieldset>
+            <legend class="vc">Version Control</legend>
+            <dl>
+              <dt><label data-for='version-control'>Host Type</label></dt>
+              <dd class='version-control checkboxes'>
+                <ul id='version-control'>
+                  <li><input type='radio' name='version-control' value='git' id='vc-git' checked> <label for='vc-git'>Git</label></li>
+                  <li><input type='radio' name='version-control' value='github' id='vc-github'> <label for='vc-github'>Github</label></li>
+                </ul>
+              </dd>
+              <dt><label for='url'>URL</label></dt>
+              <dd><input id='url' name='url' type='text' placeholder='https://example.com/project/repo.git'></dd>
+              <dt><label for='branch'>Branch</label></dt>
+              <dd><input id='branch' name='branch' type='text' placeholder='master'></dd>
+              <dt><label for='build-target'>Build Target</label></dt>
+              <dd><input id='build-target' name='build-target' type='text' placeholder='https://buildtarget.com'></dd>
+            </dl>
+          </fieldset>
+          <fieldset>
+              <legend>Build Tool</legend>
+              <dl>
+                <dt><label data-for='build-tool'>Build Tool</label></dt>
+                <dd class='build-tool checkboxes'>
+                  <ul id='build-tool'>
+                    <li><input type='radio' name='build-tool' value='ant' id='bt-ant' checked> <label for='bt-ant'>Ant</label></li>
+                    <li><input type='radio' name='build-tool' value='docker' id='bt-docker'> <label for='bt-docker'>Docker</label></li>
+                    <li><input type='radio' name='build-tool' value='npm' id='bt-npm'> <label for='bt-npm'>NPM</label></li>
+                    <li><input type='radio' name='build-tool' value='maven' id='bt-maven'> <label for='bt-maven'>Maven</label></li>
+                    <li><input type='radio' name='build-tool' value='sonarqube' id='bt-sonarqube'> <label for='bt-sonarqube'>SonarQube</label></li>
+                  </ul>
+                </dd>
+                <dt><label for='command'>Command</label></dt>
+                <dd><input id='command' name='command' type='text' placeholder='docker build .'></dd>
+                <dt><label data-for='docker'>Docker</label></dt>
+                <dd class='docker checkboxes'>
+                  <ul id='docker'>
+                    <li><input type='radio' name='docker' value='single' id='docker-single' checked> <label for='docker-single'>Single Container</label></li>
+                    <li><input type='radio' name='docker' value='multiple' id='docker-multiple'> <label for='docker-multiple'>Multiple Containers</label></li>
+                  </ul>
+                </dd>
+              </dl>
+            </fieldset>
+        </form>
+      </section>
     </article>
   </arg>
 </include>

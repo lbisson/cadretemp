@@ -1,10 +1,35 @@
 <include src='layouts/main'>
     <arg pageContent>
       <article>
-        <header>
-          <h1>{content.projectName}</h1>
-          <p>This is the test page</p>
-        </header>
+          <section>
+              <h1 class="config-title">Test Configuration</h1>
+              <button>Add Test Job</button>
+              <form action='/somewhere' method='post' class='semanticForms' data-clearfield-horizontal-offset='21' data-clearfield-vertical-offset='5'>
+                <fieldset>
+                  <legend>Test Tool</legend>
+                  <dl>
+                    <dt><label data-for='test-tool'>Test Tool</label></dt>
+                    <dd class='test-tool checkboxes'>
+                      <ul id='test-tool'>
+                        <li><input type='radio' name='test-tool' value='mocha' id='tt-mocha' checked> <label for='tt-mocha'>Mocha</label></li>
+                        <li><input type='radio' name='test-tool' value='jest' id='tt-jest'> <label for='tt-jest'>Jest</label></li>
+                        <li><input type='radio' name='test-tool' value='selenium' id='tt-selenium'> <label for='tt-selenium'>Selenium</label></li>
+                        <li><input type='radio' name='test-tool' value='robot-framework' id='tt-robot-framework'> <label for='tt-robot-framework'>Robot Framework</label></li>
+                      </ul>
+                    </dd>
+                    <dt><label data-for='test-type'>Test Type</label></dt>
+                    <dd class='test-type checkboxes'>
+                      <ul id='test-type'>
+                        <li><input type='radio' name='test-type' value='unit' id='tt-unit' checked> <label for='tt-unit'>Unit</label></li>
+                        <li><input type='radio' name='test-type' value='smoke' id='tt-smoke'> <label for='tt-smoke'>Smoke</label></li>
+                      </ul>
+                    </dd>
+                    <dt><label for='command'>Command</label></dt>
+                      <dd><input id='command' name='command' type='text' placeholder='npm run tests'></dd>
+                  </dl>
+                </fieldset>
+              </form>
+            </section>
       </article>
     </arg>
   </include>

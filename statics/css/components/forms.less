@@ -1,7 +1,130 @@
+@import 'fonts';
+@import 'colors';
+
 form {
     display: flex;
     flex-direction: column;
+    input[type="radio"] {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #999;
+        transition: 0.2s all ease-in-out;
+        outline: none;
+        position: relative;
+    }
+    input[type="radio"]:checked {
+        border: 6px solid #39BFD8;
+    }
+    input[type="radio"]:focus {
+        box-shadow: 0 0 0 1px #dedede, 0 0 0px 3px #39BFD8;
+    }
     #submit {
         align-self: center;
+    }
+    &.semanticForms {
+        flex-direction: row;
+        font-family: @default-font;
+    }
+    &.semanticForms .floatLabelForm dd {
+        float: none;
+    }
+    &.semanticForms fieldset {
+        background-color: #dedede;
+        margin: 0 2em 0 0;
+        border-width: 4em 0 2em 2em;
+        border-style: solid;
+        border-color: #dedede;
+        border-radius: 10px;
+    }
+    &.semanticForms fieldset:focus-within {
+        box-shadow: 0px 0px 0px 5px #39BFD8;
+    }
+    &.semanticForms dl dd {
+        background-color: #dedede;
+    }
+    &.semanticForms .checkboxes li {
+        display: flex;
+        label {
+            display: flex;
+            padding: 0 0 0 .75em;
+            &:before {
+                content: " ";
+                height: 16px;
+                left: -6px;
+                position: relative;
+                width: 16px;
+                background-color: #999;
+                transition: 0.2s all ease-in-out;
+            }
+            &[for='vc-git']:before {
+                -webkit-mask: url(../images/git.svg);
+                mask: url(../images/git.svg);
+            }
+            &[for='vc-github']:before {
+                -webkit-mask: url(../images/github.svg);
+                mask: url(../images/github.svg);
+            }
+            &[for='bt-ant']:before {
+                -webkit-mask: url(../images/ant.svg);
+                mask: url(../images/ant.svg);
+            }
+            &[for='bt-docker']:before {
+                -webkit-mask: url(../images/docker.svg);
+                mask: url(../images/docker.svg);
+            }
+            &[for='bt-npm']:before {
+                -webkit-mask: url(../images/npm.svg);
+                mask: url(../images/npm.svg);
+            }
+            &[for='bt-maven']:before {
+                -webkit-mask: url(../images/maven.svg);
+                mask: url(../images/maven.svg);
+            }
+            &[for='bt-sonarqube']:before {
+                -webkit-mask: url(../images/sonarqube.svg);
+                mask: url(../images/sonarqube.svg);
+            }
+            &[for='docker-single']:before {
+                -webkit-mask: url(../images/d-single.svg);
+                mask: url(../images/d-single.svg);
+            }
+            &[for='docker-multiple']:before {
+                -webkit-mask: url(../images/d-multiple.svg);
+                mask: url(../images/d-multiple.svg);
+            }
+        }
+        :checked + label {
+            &[for='vc-git']:before {
+                background-color: @git;
+            }
+            &[for='vc-github']:before {
+                background-color: @github;
+            }
+            &[for='bt-ant']:before {
+                background-color: @ant;
+            }
+            &[for='bt-docker']:before {
+                background-color: @docker;
+            }
+            &[for='bt-npm']:before {
+                background-color: @npm;
+            }
+            &[for='bt-maven']:before {
+                background-color: @maven;
+            }
+            &[for='bt-sonarqube']:before {
+                background-color: @sonarqube;
+            }
+            &[for='docker-single']:before {
+                background-color: @docker;
+            }
+            &[for='docker-multiple']:before {
+                background-color: @docker;
+            }
+        }
     }
 }
