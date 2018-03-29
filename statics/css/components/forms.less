@@ -96,6 +96,30 @@ form {
                 -webkit-mask: url(../images/d-multiple.svg);
                 mask: url(../images/d-multiple.svg);
             }
+            &[for='tt-mocha']:before {
+                -webkit-mask: url(../images/mocha.svg);
+                mask: url(../images/mocha.svg);
+            }
+            &[for='tt-jest']:before {
+                -webkit-mask: url(../images/jest.svg);
+                mask: url(../images/jest.svg);
+            }
+            &[for='tt-selenium']:before {
+                -webkit-mask: url(../images/selenium.svg);
+                mask: url(../images/selenium.svg);
+            }
+            &[for='tt-robot-framework']:before {
+                -webkit-mask: url(../images/robot-framework.svg);
+                mask: url(../images/robot-framework.svg);
+            }
+            &[for='tt-unit']:before {
+                -webkit-mask: url(../images/unit.svg);
+                mask: url(../images/unit.svg);
+            }
+            &[for='tt-smoke']:before {
+                -webkit-mask: url(../images/smoke.svg);
+                mask: url(../images/smoke.svg);
+            }
         }
         :checked + label {
             &[for='vc-git']:before {
@@ -124,6 +148,24 @@ form {
             }
             &[for='docker-multiple']:before {
                 background-color: @docker;
+            }
+            &[for='tt-mocha']:before {
+                background-color: @mocha;
+            }
+            &[for='tt-jest']:before {
+                background-color: @jest;
+            }
+            &[for='tt-selenium']:before {
+                background-color: @selenium;
+            }
+            &[for='tt-robot-framework']:before {
+                background-color: @robot-framework;
+            }
+            &[for='tt-unit']:before {
+                background-color: @unit;
+            }
+            &[for='tt-smoke']:before {
+                background-color: @smoke;
             }
         }
     }
